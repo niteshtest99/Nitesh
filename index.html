@@ -8,7 +8,6 @@
 </head>
 <body>
      <button id="rzp-button1">Pay</button>
-
     <script>
         var razorpay = new Razorpay({
   key: 'rzp_live_T52MWlo0hd9V0R',
@@ -22,8 +21,7 @@ var data = {
   email: 'gaurav.kumar@example.com',
   contact: '900000000001',
   // order_id: 'order_TnmzszZCNe8qjy',
-  method: 'upi',
-
+  method: 'upi'
   };
 
 
@@ -48,6 +46,5 @@ razorpay.createPayment(data, { app: 'phonepe'});
 //   }
 // }
     </script>
-
 </body>
 </html>
