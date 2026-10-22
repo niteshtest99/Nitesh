@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Checkout</title>
+    <title>Document</title>
     <script type="text/javascript" src="https://checkout.razorpay.com/v1/razorpay.js"></script>
 </head>
 <body>
@@ -13,6 +13,7 @@
         var razorpay = new Razorpay({
   key: 'rzp_live_T52MWlo0hd9V0R',
   image: 'https://picsum.photos/200/300',
+  // logo, displayed in the payment processing popup
   redirect: true
 });
 var data = {
@@ -21,14 +22,32 @@ var data = {
   email: 'gaurav.kumar@example.com',
   contact: '900000000001',
   // order_id: 'order_TnmzszZCNe8qjy',
-  method: 'upi'
+  method: 'upi',
+
   };
+
+
 var btn = document.getElementById("rzp-button1");
 btn.addEventListener('click', function(){
+  // has to be placed within user initiated context, such as click, in order for popup to open.
 
 razorpay.createPayment(data, { app: 'phonepe'});
 
 })
-</script>
+
+// {
+//   amount: 5000,
+//   email: 'gaurav.kumar@example.com',
+//   contact: '+919000090000',
+//   // order_id: 'order_9A33XWu170XXXX',
+//   method: 'upi',
+//   upi:
+//   {
+//     qr: true,
+//     timeout: 10
+//   }
+// }
+    </script>
+
 </body>
 </html>
